@@ -17,11 +17,11 @@ type PartyMQClient interface {
 }
 
 type srvCtx struct {
-	httpClient http.Client
+	httpClient *http.Client
 	baseUrl    string
 }
 
-func New(httpClient http.Client) PartyMQClient {
+func New(httpClient *http.Client) PartyMQClient {
 	return &srvCtx{httpClient: httpClient}
 }
 
