@@ -21,8 +21,8 @@ type srvCtx struct {
 	baseUrl    string
 }
 
-func New(httpClient *http.Client) PartyMQClient {
-	return &srvCtx{httpClient: httpClient}
+func New(httpClient *http.Client, baseUrl string) PartyMQClient {
+	return &srvCtx{httpClient: httpClient, baseUrl: baseUrl}
 }
 
 func (sCtx *srvCtx) Bind(hostname string) (Binding, error) {
